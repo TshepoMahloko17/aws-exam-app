@@ -1,0 +1,564 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which AWS service provides a fully managed NoSQL database?",
+      "options": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon Aurora"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability."
+    },
+    {
+      "id": 2,
+      "text": "Which of the following are valid DynamoDB key types? (Select TWO)",
+      "options": [
+        "Partition key",
+        "Foreign key",
+        "Sort key",
+        "Primary index key"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "DynamoDB supports two types of primary keys: a simple primary key (partition key only) and a composite primary key (partition key and sort key)."
+    },
+    {
+      "id": 3,
+      "text": "What is the maximum size of an item in DynamoDB?",
+      "options": ["64 KB", "256 KB", "400 KB", "1 MB"],
+      "correctAnswers": [2],
+      "explanation": "The maximum item size in DynamoDB is 400 KB, which includes the attribute names and values."
+    },
+    {
+      "id": 4,
+      "text": "Which Amazon SQS feature ensures that a message is delivered at least once?",
+      "options": [
+        "Long polling",
+        "At-least-once delivery",
+        "Message deduplication",
+        "Dead letter queues"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Standard SQS queues guarantee at-least-once delivery, meaning each message is delivered at least once but occasionally more than one copy may be delivered."
+    },
+    {
+      "id": 5,
+      "text": "What is the default visibility timeout for an Amazon SQS message?",
+      "options": ["10 seconds", "30 seconds", "60 seconds", "5 minutes"],
+      "correctAnswers": [1],
+      "explanation": "The default visibility timeout for an SQS message is 30 seconds. During this period, other consumers cannot see or process the message."
+    },
+    {
+      "id": 6,
+      "text": "Which SNS protocol is NOT supported for subscriptions?",
+      "options": ["HTTP/HTTPS", "Email", "FTP", "SMS"],
+      "correctAnswers": [2],
+      "explanation": "Amazon SNS supports HTTP/HTTPS, Email, SMS, SQS, Lambda, and application endpoints, but does not support FTP as a subscription protocol."
+    },
+    {
+      "id": 7,
+      "text": "Which EC2 instance purchasing option provides the largest discount compared to On-Demand pricing?",
+      "options": [
+        "Spot Instances",
+        "Reserved Instances",
+        "Dedicated Hosts",
+        "Savings Plans"
+      ],
+      "correctAnswers": [0],
+      "explanation": "Spot Instances can provide up to 90% discount compared to On-Demand pricing, making them the most cost-effective option for fault-tolerant workloads."
+    },
+    {
+      "id": 8,
+      "text": "Which of the following are valid EC2 instance states? (Select THREE)",
+      "options": ["running", "stopped", "terminated", "paused", "hibernating"],
+      "correctAnswers": [0, 1, 2],
+      "explanation": "Valid EC2 instance states include pending, running, stopping, stopped, shutting-down, and terminated. Paused is not a valid EC2 state."
+    },
+    {
+      "id": 9,
+      "text": "Which Elastic Load Balancer type operates at the application layer (Layer 7)?",
+      "options": [
+        "Classic Load Balancer",
+        "Network Load Balancer",
+        "Application Load Balancer",
+        "Gateway Load Balancer"
+      ],
+      "correctAnswers": [2],
+      "explanation": "Application Load Balancer (ALB) operates at Layer 7 (HTTP/HTTPS) and can route traffic based on content of the request such as URL path, host header, or query string."
+    },
+    {
+      "id": 10,
+      "text": "In CloudFormation, what does the 'Outputs' section do?",
+      "options": [
+        "Defines input parameters for the stack",
+        "Declares values that can be imported into other stacks",
+        "Specifies resources to create",
+        "Sets conditions for resource creation"
+      ],
+      "correctAnswers": [1],
+      "explanation": "The Outputs section declares output values that you can import into other stacks, return in response to describe stack calls, or view in the CloudFormation console."
+    },
+    {
+      "id": 11,
+      "text": "Which CloudFormation intrinsic function is used to reference another resource in the same template?",
+      "options": ["Fn::GetAtt", "Fn::Ref", "Fn::Sub", "Fn::Join"],
+      "correctAnswers": [1],
+      "explanation": "Fn::Ref returns the value of the specified parameter or resource. For resources, it typically returns the physical ID or ARN."
+    },
+    {
+      "id": 12,
+      "text": "Which Elastic Beanstalk deployment policy performs an in-place update on all instances simultaneously?",
+      "options": ["Rolling", "All at once", "Immutable", "Blue/Green"],
+      "correctAnswers": [1],
+      "explanation": "The 'All at once' deployment policy deploys the new version to all instances simultaneously, causing a brief outage but providing the fastest deployment."
+    },
+    {
+      "id": 13,
+      "text": "Which IAM policy element specifies the actions that are allowed or denied?",
+      "options": ["Resource", "Effect", "Action", "Principal"],
+      "correctAnswers": [2],
+      "explanation": "The Action element describes the specific action or actions that will be allowed or denied. Actions are defined using the service namespace and action name."
+    },
+    {
+      "id": 14,
+      "text": "What is the maximum number of IAM policies that can be attached to a single IAM role?",
+      "options": ["5", "10", "20", "Unlimited"],
+      "correctAnswers": [1],
+      "explanation": "You can attach a maximum of 10 managed policies to an IAM role. This includes both AWS managed and customer managed policies."
+    },
+    {
+      "id": 15,
+      "text": "Which S3 storage class is best suited for data with unpredictable access patterns?",
+      "options": [
+        "S3 Standard",
+        "S3 Intelligent-Tiering",
+        "S3 Standard-IA",
+        "S3 Glacier"
+      ],
+      "correctAnswers": [1],
+      "explanation": "S3 Intelligent-Tiering automatically moves data between frequent and infrequent access tiers based on changing access patterns, optimizing costs without performance impact."
+    },
+    {
+      "id": 16,
+      "text": "Which of the following are features of Amazon S3? (Select TWO)",
+      "options": [
+        "Block-level storage",
+        "Object versioning",
+        "Lifecycle policies",
+        "POSIX file system"
+      ],
+      "correctAnswers": [1, 2],
+      "explanation": "S3 supports object versioning to preserve, retrieve, and restore every version of every object, and lifecycle policies to automate transitions between storage classes."
+    },
+    {
+      "id": 17,
+      "text": "What is the minimum size of a VPC CIDR block?",
+      "options": ["/16", "/24", "/28", "/32"],
+      "correctAnswers": [2],
+      "explanation": "The minimum size of a VPC CIDR block is /28, which provides 16 IP addresses. The maximum is /16, providing 65,536 IP addresses."
+    },
+    {
+      "id": 18,
+      "text": "Which VPC component allows instances in a private subnet to access the internet for software updates?",
+      "options": [
+        "Internet Gateway",
+        "NAT Gateway",
+        "VPC Peering",
+        "VPN Gateway"
+      ],
+      "correctAnswers": [1],
+      "explanation": "A NAT Gateway enables instances in a private subnet to connect to the internet or other AWS services while preventing the internet from initiating connections with those instances."
+    },
+    {
+      "id": 19,
+      "text": "Which EBS volume type provides the highest IOPS performance?",
+      "options": [
+        "General Purpose SSD (gp3)",
+        "Provisioned IOPS SSD (io2)",
+        "Throughput Optimized HDD (st1)",
+        "Cold HDD (sc1)"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Provisioned IOPS SSD (io2) volumes can deliver up to 64,000 IOPS per volume, making them the highest-performance EBS volume type for I/O-intensive workloads."
+    },
+    {
+      "id": 20,
+      "text": "What happens to an EBS volume when the attached EC2 instance is terminated by default?",
+      "options": [
+        "The volume is detached and persists",
+        "The root volume is deleted, additional volumes persist",
+        "All volumes are deleted",
+        "All volumes are converted to snapshots"
+      ],
+      "correctAnswers": [1],
+      "explanation": "By default, the root EBS volume has DeleteOnTermination set to true and is deleted. Additional EBS volumes have it set to false and persist after instance termination."
+    },
+    {
+      "id": 21,
+      "text": "Which Auto Scaling policy type adjusts the desired capacity based on a target value for a specific metric?",
+      "options": [
+        "Simple scaling",
+        "Step scaling",
+        "Target tracking scaling",
+        "Scheduled scaling"
+      ],
+      "correctAnswers": [2],
+      "explanation": "Target tracking scaling policies adjust the number of instances to maintain a target value for a specified metric, such as keeping average CPU utilization at 50%."
+    },
+    {
+      "id": 22,
+      "text": "In Amazon SWF, what is the maximum duration for a workflow execution?",
+      "options": ["24 hours", "30 days", "1 year", "Unlimited"],
+      "correctAnswers": [2],
+      "explanation": "Amazon SWF workflow executions can run for up to 1 year (365 days). This makes SWF suitable for long-running business processes."
+    },
+    {
+      "id": 23,
+      "text": "Which RDS feature provides high availability by maintaining a synchronous standby replica in a different Availability Zone?",
+      "options": [
+        "Read Replicas",
+        "Multi-AZ deployment",
+        "Cross-Region Replication",
+        "Automated backups"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Multi-AZ deployment maintains a synchronous standby replica in a different AZ. In case of failure, RDS automatically fails over to the standby with minimal disruption."
+    },
+    {
+      "id": 24,
+      "text": "Which of the following RDS engines support Read Replicas? (Select TWO)",
+      "options": [
+        "MySQL",
+        "Oracle (non-Enterprise)",
+        "PostgreSQL",
+        "Microsoft SQL Server Express"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "MySQL and PostgreSQL are among the RDS engines that fully support Read Replicas for read scaling and cross-region replication."
+    },
+    {
+      "id": 25,
+      "text": "What is the maximum message size for Amazon SQS?",
+      "options": ["64 KB", "128 KB", "256 KB", "512 KB"],
+      "correctAnswers": [2],
+      "explanation": "The maximum message size for Amazon SQS is 256 KB. For larger payloads, you can use the Extended Client Library to store the payload in S3."
+    },
+    {
+      "id": 26,
+      "text": "Which IAM feature allows you to grant temporary security credentials to users?",
+      "options": ["IAM Groups", "IAM Roles", "IAM Policies", "Access Keys"],
+      "correctAnswers": [1],
+      "explanation": "IAM Roles provide temporary security credentials (via AWS STS) to entities that assume the role, avoiding the need for long-term access keys."
+    },
+    {
+      "id": 27,
+      "text": "Which S3 feature must be enabled to use Cross-Region Replication?",
+      "options": [
+        "Transfer Acceleration",
+        "Versioning",
+        "Server-Side Encryption",
+        "Lifecycle policies"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Versioning must be enabled on both the source and destination buckets to use Cross-Region Replication in Amazon S3."
+    },
+    {
+      "id": 28,
+      "text": "Which DynamoDB feature allows you to perform atomic operations on multiple items across tables?",
+      "options": [
+        "Conditional writes",
+        "TransactWriteItems",
+        "BatchWriteItem",
+        "UpdateItem with expressions"
+      ],
+      "correctAnswers": [1],
+      "explanation": "TransactWriteItems provides atomic operations across multiple items and tables in DynamoDB, ensuring all operations succeed or all fail together."
+    },
+    {
+      "id": 29,
+      "text": "What is the purpose of an SNS Dead Letter Queue?",
+      "options": [
+        "To store messages that exceed size limits",
+        "To hold messages that cannot be delivered to subscribers",
+        "To archive processed messages",
+        "To throttle message delivery"
+      ],
+      "correctAnswers": [1],
+      "explanation": "An SNS Dead Letter Queue stores messages that cannot be successfully delivered to subscribed endpoints after the maximum number of delivery retries."
+    },
+    {
+      "id": 30,
+      "text": "Which EC2 placement strategy distributes instances across underlying hardware to minimize correlated failures?",
+      "options": [
+        "Cluster placement group",
+        "Spread placement group",
+        "Partition placement group",
+        "Default placement"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Spread placement groups place instances on distinct underlying hardware, reducing the risk of simultaneous failures when hardware fails."
+    },
+    {
+      "id": 31,
+      "text": "Which CloudFormation feature allows you to detect changes made outside of CloudFormation to stack resources?",
+      "options": [
+        "Change Sets",
+        "Drift Detection",
+        "Stack Policies",
+        "Nested Stacks"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Drift Detection identifies resources that have been modified outside of CloudFormation management, helping you maintain consistency between the template and actual resources."
+    },
+    {
+      "id": 32,
+      "text": "Which Elastic Beanstalk component represents a collection of AWS resources running an application version?",
+      "options": [
+        "Application",
+        "Environment",
+        "Configuration template",
+        "Platform"
+      ],
+      "correctAnswers": [1],
+      "explanation": "An Environment is a collection of AWS resources running an application version. You can deploy multiple environments for one application (e.g., dev, staging, prod)."
+    },
+    {
+      "id": 33,
+      "text": "Which of the following are valid VPC endpoint types? (Select TWO)",
+      "options": [
+        "Interface endpoint",
+        "Direct endpoint",
+        "Gateway endpoint",
+        "Transit endpoint"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "VPC supports two types of endpoints: Interface endpoints (powered by PrivateLink, using ENIs) and Gateway endpoints (for S3 and DynamoDB, using route table entries)."
+    },
+    {
+      "id": 34,
+      "text": "What is the maximum number of Availability Zones that an Auto Scaling group can span?",
+      "options": ["2", "3", "All AZs in the region", "6"],
+      "correctAnswers": [2],
+      "explanation": "An Auto Scaling group can span all Availability Zones within the region where it is created, providing high availability across multiple data centers."
+    },
+    {
+      "id": 35,
+      "text": "Which SWF component makes decisions about the workflow execution flow?",
+      "options": [
+        "Activity worker",
+        "Decider",
+        "Workflow starter",
+        "Task router"
+      ],
+      "correctAnswers": [1],
+      "explanation": "The Decider is a program that controls the coordination of tasks, processes workflow history events, and schedules activity tasks or signals the workflow to complete."
+    },
+    {
+      "id": 36,
+      "text": "Which DynamoDB capacity mode automatically adjusts throughput based on traffic patterns?",
+      "options": [
+        "Provisioned capacity",
+        "On-demand capacity",
+        "Reserved capacity",
+        "Burst capacity"
+      ],
+      "correctAnswers": [1],
+      "explanation": "On-demand capacity mode automatically adjusts to handle varying traffic loads without the need to specify read and write capacity units in advance."
+    },
+    {
+      "id": 37,
+      "text": "Which of the following are benefits of using Amazon SQS FIFO queues? (Select TWO)",
+      "options": [
+        "Exactly-once processing",
+        "Unlimited throughput",
+        "Message ordering guarantee",
+        "Automatic message encryption"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "SQS FIFO queues provide exactly-once processing (via deduplication) and strict ordering of messages, making them suitable for applications requiring message sequencing."
+    },
+    {
+      "id": 38,
+      "text": "Which EBS snapshot feature allows you to create a volume in a different region?",
+      "options": [
+        "Snapshot lifecycle",
+        "Cross-region snapshot copy",
+        "Fast snapshot restore",
+        "Snapshot archive"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Cross-region snapshot copy allows you to copy an EBS snapshot to another region and create volumes from it, enabling disaster recovery and migration scenarios."
+    },
+    {
+      "id": 39,
+      "text": "What is the default session duration when assuming an IAM role via AWS STS?",
+      "options": ["15 minutes", "1 hour", "4 hours", "12 hours"],
+      "correctAnswers": [1],
+      "explanation": "The default session duration when assuming a role via STS AssumeRole is 1 hour (3600 seconds). It can be configured between 15 minutes and 12 hours."
+    },
+    {
+      "id": 40,
+      "text": "Which S3 event notification destination is NOT natively supported?",
+      "options": ["SNS topic", "SQS queue", "Lambda function", "EC2 instance"],
+      "correctAnswers": [3],
+      "explanation": "S3 event notifications can be sent to SNS topics, SQS queues, and Lambda functions. EC2 instances are not a supported notification destination."
+    },
+    {
+      "id": 41,
+      "text": "Which CloudFormation section is mandatory in every template?",
+      "options": ["Parameters", "Resources", "Outputs", "Mappings"],
+      "correctAnswers": [1],
+      "explanation": "The Resources section is the only mandatory section in a CloudFormation template. It specifies the AWS resources to be created or modified."
+    },
+    {
+      "id": 42,
+      "text": "Which Elastic Beanstalk deployment policy creates a separate set of instances and switches DNS?",
+      "options": [
+        "Rolling with additional batch",
+        "Immutable",
+        "Blue/Green",
+        "All at once"
+      ],
+      "correctAnswers": [2],
+      "explanation": "Blue/Green deployment creates a completely separate environment and uses DNS switching (CNAME swap) to redirect traffic from the old to the new environment."
+    },
+    {
+      "id": 43,
+      "text": "Which of the following can be used as targets for an Application Load Balancer? (Select TWO)",
+      "options": [
+        "Lambda functions",
+        "S3 buckets",
+        "IP addresses",
+        "CloudFront distributions"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "ALB supports EC2 instances, IP addresses, Lambda functions, and containers as targets. S3 buckets and CloudFront distributions are not valid ALB targets."
+    },
+    {
+      "id": 44,
+      "text": "What does the DynamoDB Streams feature provide?",
+      "options": [
+        "Real-time backup of table data",
+        "Time-ordered sequence of item-level changes",
+        "Cross-region replication setup",
+        "Automated capacity management"
+      ],
+      "correctAnswers": [1],
+      "explanation": "DynamoDB Streams captures a time-ordered sequence of item-level modifications (inserts, updates, deletes) in a DynamoDB table and stores this information for up to 24 hours."
+    },
+    {
+      "id": 45,
+      "text": "What is the maximum retention period for Amazon SQS messages?",
+      "options": ["4 days", "7 days", "14 days", "30 days"],
+      "correctAnswers": [2],
+      "explanation": "The maximum message retention period for SQS is 14 days. The default is 4 days, and the minimum is 60 seconds."
+    },
+    {
+      "id": 46,
+      "text": "Which SNS feature allows you to filter messages delivered to a subscription?",
+      "options": [
+        "Message attributes",
+        "Subscription filter policy",
+        "Topic policy",
+        "Message deduplication"
+      ],
+      "correctAnswers": [1],
+      "explanation": "A subscription filter policy allows a subscriber to receive only a subset of messages published to a topic, based on message attributes matching the filter criteria."
+    },
+    {
+      "id": 47,
+      "text": "Which of the following are valid Auto Scaling termination policies? (Select TWO)",
+      "options": [
+        "OldestInstance",
+        "SmallestInstance",
+        "OldestLaunchConfiguration",
+        "LeastConnections"
+      ],
+      "correctAnswers": [0, 2],
+      "explanation": "Valid termination policies include OldestInstance, NewestInstance, OldestLaunchConfiguration, ClosestToNextInstanceHour, OldestLaunchTemplate, and Default."
+    },
+    {
+      "id": 48,
+      "text": "In RDS, what is the purpose of a parameter group?",
+      "options": [
+        "To define network security rules",
+        "To configure database engine settings",
+        "To specify backup schedules",
+        "To set storage allocation"
+      ],
+      "correctAnswers": [1],
+      "explanation": "A parameter group acts as a container for engine configuration values that are applied to one or more DB instances. It allows tuning of the database engine behavior."
+    },
+    {
+      "id": 49,
+      "text": "Which VPC feature allows you to privately connect your VPC to supported AWS services without an internet gateway?",
+      "options": [
+        "NAT Gateway",
+        "VPC Endpoint",
+        "Transit Gateway",
+        "VPC Peering"
+      ],
+      "correctAnswers": [1],
+      "explanation": "VPC Endpoints allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by PrivateLink, without requiring an internet gateway."
+    },
+    {
+      "id": 50,
+      "text": "Which EC2 instance metadata category contains the IAM role credentials for the instance?",
+      "options": [
+        "ami-id",
+        "iam/security-credentials/",
+        "instance-type",
+        "public-hostname"
+      ],
+      "correctAnswers": [1],
+      "explanation": "The iam/security-credentials/ path in instance metadata provides temporary security credentials for the IAM role attached to the instance."
+    },
+    {
+      "id": 51,
+      "text": "Which of the following are components of an IAM policy statement? (Select THREE)",
+      "options": ["Effect", "Action", "Resource", "Duration", "Region"],
+      "correctAnswers": [0, 1, 2],
+      "explanation": "The main elements of an IAM policy statement are Effect (Allow/Deny), Action (what actions), Resource (which resources), and optionally Condition. Duration and Region are not policy elements."
+    },
+    {
+      "id": 52,
+      "text": "What is the maximum number of S3 buckets per AWS account by default?",
+      "options": ["20", "50", "100", "500"],
+      "correctAnswers": [2],
+      "explanation": "By default, you can create up to 100 S3 buckets per AWS account. This limit can be increased by requesting a service limit increase."
+    },
+    {
+      "id": 53,
+      "text": "Which DynamoDB index type allows you to query data using an alternate sort key?",
+      "options": [
+        "Global Secondary Index",
+        "Local Secondary Index",
+        "Primary Index",
+        "Composite Index"
+      ],
+      "correctAnswers": [1],
+      "explanation": "A Local Secondary Index (LSI) has the same partition key as the base table but a different sort key, allowing queries with an alternate sort key within the same partition."
+    },
+    {
+      "id": 54,
+      "text": "Which CloudFormation helper script is used to retrieve metadata from a resource?",
+      "options": ["cfn-init", "cfn-signal", "cfn-get-metadata", "cfn-hup"],
+      "correctAnswers": [2],
+      "explanation": "cfn-get-metadata retrieves metadata for a resource or path to a specific key from the CloudFormation stack, useful for reading configuration data."
+    },
+    {
+      "id": 55,
+      "text": "Which Elastic Beanstalk configuration file is used to customize the environment?",
+      "options": [
+        "appspec.yml",
+        ".ebextensions/*.config",
+        "buildspec.yml",
+        "template.yaml"
+      ],
+      "correctAnswers": [1],
+      "explanation": "Configuration files placed in the .ebextensions directory with a .config extension are used to customize and configure your Elastic Beanstalk environment."
+    }
+  ]
+}
