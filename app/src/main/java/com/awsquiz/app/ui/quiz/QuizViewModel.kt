@@ -99,10 +99,10 @@ class QuizViewModel @Inject constructor(
     }
 
     private suspend fun loadSession() {
-        val sessionResult = sessionRepository.loadIncompleteSession()
+        val sessionResult = sessionRepository.getSession(sessionId)
         sessionResult.fold(
             onSuccess = { loadedSession ->
-                if (loadedSession == null || loadedSession.id != sessionId) {
+                if (loadedSession == null) {
                     _uiState.value = QuizUiState.Error(
                         AppError.SessionCorruptionError("Session not found")
                     )

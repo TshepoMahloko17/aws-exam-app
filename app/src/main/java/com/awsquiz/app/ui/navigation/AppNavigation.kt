@@ -50,6 +50,9 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
                         popUpTo(Routes.HOME) { inclusive = false }
                     }
                 },
+                onNavigateHome = {
+                    navController.popBackStack(Routes.HOME, inclusive = false)
+                },
                 onError = {
                     navController.popBackStack(Routes.HOME, inclusive = false)
                 }

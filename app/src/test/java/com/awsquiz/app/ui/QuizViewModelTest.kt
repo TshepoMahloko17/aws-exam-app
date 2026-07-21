@@ -509,6 +509,11 @@ class QuizViewModelTest {
             return Result.success(Unit)
         }
 
+        override suspend fun getSession(sessionId: String): Result<Session?> {
+            val exactMatch = savedSessions.firstOrNull { it.id == sessionId }
+            return Result.success(exactMatch ?: incompleteSession?.takeIf { it.id == sessionId })
+        }
+
         override suspend fun loadIncompleteSession(): Result<Session?> {
             return Result.success(incompleteSession)
         }

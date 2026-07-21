@@ -175,6 +175,10 @@ class FakeSessionDao : SessionDao {
         storedSessions[session.id] = session
     }
 
+    override suspend fun getSession(sessionId: String): SessionEntity? {
+        return storedSessions[sessionId]
+    }
+
     override suspend fun getIncompleteSession(): SessionEntity? {
         return storedSessions.values.firstOrNull { !it.isCompleted }
     }

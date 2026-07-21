@@ -10,6 +10,9 @@ interface SessionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertSession(session: SessionEntity)
 
+    @Query("SELECT * FROM sessions WHERE id = :sessionId LIMIT 1")
+    suspend fun getSession(sessionId: String): SessionEntity?
+
     @Query("SELECT * FROM sessions WHERE isCompleted = 0 LIMIT 1")
     suspend fun getIncompleteSession(): SessionEntity?
 

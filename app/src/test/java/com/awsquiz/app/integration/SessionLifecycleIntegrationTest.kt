@@ -243,6 +243,10 @@ class SessionLifecycleIntegrationTest {
             return Result.success(Unit)
         }
 
+        override suspend fun getSession(sessionId: String): Result<Session?> {
+            return Result.success(sessions[sessionId])
+        }
+
         override suspend fun loadIncompleteSession(): Result<Session?> {
             return Result.success(sessions.values.firstOrNull { !it.isCompleted })
         }

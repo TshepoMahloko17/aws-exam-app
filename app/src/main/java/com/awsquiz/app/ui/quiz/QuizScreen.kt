@@ -45,6 +45,7 @@ import android.widget.Toast
 fun QuizScreen(
     viewModel: QuizViewModel = hiltViewModel(),
     onSessionCompleted: (correctCount: Int, totalCount: Int, percentage: Int, passed: Boolean) -> Unit,
+    onNavigateHome: () -> Unit,
     onError: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -79,7 +80,8 @@ fun QuizScreen(
                     onOptionSelected = viewModel::selectOption,
                     onSubmit = viewModel::submitAnswer,
                     onPrevious = viewModel::goToPrevious,
-                    onNext = viewModel::goToNext
+                    onNext = viewModel::goToNext,
+                    onNavigateHome = onNavigateHome
                 )
             }
 
@@ -107,7 +109,8 @@ private fun QuizActiveContent(
     onOptionSelected: (Int) -> Unit,
     onSubmit: () -> Unit,
     onPrevious: () -> Unit,
-    onNext: () -> Unit
+    onNext: () -> Unit,
+    onNavigateHome: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -115,6 +118,17 @@ private fun QuizActiveContent(
             .padding(16.dp)
             .verticalScroll(rememberScrollState())
     ) {
+        Button(
+            onClick = onNavigateHome,
+            modifier = Modifier
+                .fillMaxWidth()
+                .semantics { contentDescription = "Return to Home" }
+        ) {
+            Text("Return to Home")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         // Progress indicator
         Text(
             text = state.progress,

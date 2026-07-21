@@ -23,6 +23,17 @@ class RoomSessionRepository @Inject constructor(
         }
     }
 
+    override suspend fun getSession(sessionId: String): Result<Session?> {
+        return try {
+            val entity = sessionDao.getSession(sessionId)
+                ?: return Result.success(null)
+            val session = toSession(entity)
+            Result.success(session)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     override suspend fun loadIncompleteSession(): Result<Session?> {
         return try {
             val entity = sessionDao.getIncompleteSession()
@@ -45,15 +56,10 @@ class RoomSessionRepository @Inject constructor(
 
     override suspend fun markSessionCompleted(sessionId: String): Result<Unit> {
         return try {
-            val entity = sessionDao.getIncompleteSession()
+            val entity = sessionDao.getSession(sessionId)
                 ?: return Result.failure(
                     IllegalStateException("Session not found: $sessionId")
                 )
-            if (entity.id != sessionId) {
-                return Result.failure(
-                    IllegalStateException("Session not found: $sessionId")
-                )
-            }
             val updatedEntity = entity.copy(isCompleted = true)
             sessionDao.upsertSession(updatedEntity)
             Result.success(Unit)
