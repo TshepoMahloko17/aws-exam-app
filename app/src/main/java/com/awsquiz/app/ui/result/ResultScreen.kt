@@ -41,7 +41,8 @@ fun ResultScreen(
     ) {
         Text(
             text = "Quiz Complete",
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
+            color = MaterialTheme.colorScheme.onSurface
         )
 
         Spacer(modifier = Modifier.height(32.dp))
@@ -50,6 +51,7 @@ fun ResultScreen(
             text = "$correctCount/$totalCount",
             style = MaterialTheme.typography.displayMedium,
             fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.semantics {
                 contentDescription = "$correctCount out of $totalCount correct"
             }
@@ -60,6 +62,7 @@ fun ResultScreen(
         Text(
             text = "$percentage%",
             style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.semantics {
                 contentDescription = "$percentage percent"
             }

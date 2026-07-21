@@ -89,6 +89,7 @@ private fun EmptyHistoryContent(onNavigateHome: () -> Unit) {
         Text(
             text = "No past attempts",
             style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.semantics {
                 contentDescription = "No past attempts"
             }
@@ -121,6 +122,7 @@ private fun HistoryListContent(
         Text(
             text = "Score History",
             style = MaterialTheme.typography.headlineMedium,
+            color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.padding(bottom = 8.dp)
         )
 
@@ -173,7 +175,8 @@ private fun TrendIndicator(trend: ProgressTrend) {
     ) {
         Text(
             text = "Trend: ",
-            style = MaterialTheme.typography.bodyLarge
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurface
         )
         Text(
             text = "$trendSymbol $trendText",
@@ -210,12 +213,14 @@ private fun ScoreHistoryItem(record: ScoreHistoryRecord) {
             Column {
                 Text(
                     text = dateText,
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     text = "${record.percentage}%",
                     style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
 

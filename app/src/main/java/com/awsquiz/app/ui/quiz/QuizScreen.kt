@@ -253,7 +253,14 @@ private fun OptionItem(
 
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = backgroundColor)
+        colors = CardDefaults.cardColors(
+            containerColor = backgroundColor,
+            contentColor = if (backgroundColor == MaterialTheme.colorScheme.surface) {
+                MaterialTheme.colorScheme.onSurface
+            } else {
+                Color(0xFF0F172A)
+            }
+        )
     ) {
         if (isSingleAnswer) {
             Row(
@@ -327,7 +334,8 @@ private fun FeedbackSection(
                 Color(0xFFE8F5E9)
             } else {
                 Color(0xFFFFEBEE)
-            }
+            },
+            contentColor = Color(0xFF0F172A)
         )
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
